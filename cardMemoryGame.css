@@ -1,0 +1,573 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.gameContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    width: 50vw;
+    min-height: 50vh;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    grid-gap: 5px;
+}
+
+.card {
+    width: 60px;
+    height: 60px;
+    border: 2px solid black;
+    border-radius: 5px;
+    perspective: 1000px;
+    transition: all 0.1s linear;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+
+.card-front {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    background-image: url("images/backsideDesign.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transform: rotateY(0deg);
+}
+
+#card1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#card2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#card3 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+#card4 {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+#card5 {
+    grid-area: 1 / 5 / 2 / 6;
+}
+
+#card6 {
+    grid-area: 1 / 6 / 2 / 7;
+}
+
+#card7 {
+    grid-area: 1 / 7 / 2 / 8;
+}
+
+#card8 {
+    grid-area: 1 / 8 / 2 / 9;
+}
+
+#card9 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+#card10 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#card11 {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+#card12 {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+#card13 {
+    grid-area: 2 / 5 / 3 / 6;
+}
+
+#card14 {
+    grid-area: 2 / 6 / 3 / 7;
+}
+
+#card15 {
+    grid-area: 2 / 7 / 3 / 8;
+}
+
+#card16 {
+    grid-area: 2 / 8 / 3 / 9;
+}
+
+#card17 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+#card18 {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+#card19 {
+    grid-area: 3 / 3 / 4 / 4;
+}
+
+#card20 {
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+#card21 {
+    grid-area: 3 / 5 / 4 / 6;
+}
+
+#card22 {
+    grid-area: 3 / 6 / 4 / 7;
+}
+
+#card23 {
+    grid-area: 3 / 7 / 4 / 8;
+}
+
+#card24 {
+    grid-area: 3 / 8 / 4 / 9;
+}
+
+#card25 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+#card26 {
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+#card27 {
+    grid-area: 4 / 3 / 5 / 4;
+}
+
+#card28 {
+    grid-area: 4 / 4 / 5 / 5;
+}
+
+#card29 {
+    grid-area: 4 / 5 / 5 / 6;
+}
+
+#card30 {
+    grid-area: 4 / 6 / 5 / 7;
+}
+
+#card31 {
+    grid-area: 4 / 7 / 5 / 8;
+}
+
+#card32 {
+    grid-area: 4 / 8 / 5 / 9;
+}
+
+
+@media(min-width:500px) and (max-width:1100px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
+
+    /* Medium screen: 4 columns × 8 rows */
+
+    #card1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    #card2 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    #card3 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    #card4 {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    #card5 {
+        grid-area: 5 / 1 / 6 / 2;
+    }
+
+    #card6 {
+        grid-area: 6 / 1 / 7 / 2;
+    }
+
+    #card7 {
+        grid-area: 7 / 1 / 8 / 2;
+    }
+
+    #card8 {
+        grid-area: 8 / 1 / 9 / 2;
+    }
+
+    #card9 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    #card10 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    #card11 {
+        grid-area: 3 / 2 / 4 / 3;
+    }
+
+    #card12 {
+        grid-area: 4 / 2 / 5 / 3;
+    }
+
+    #card13 {
+        grid-area: 5 / 2 / 6 / 3;
+    }
+
+    #card14 {
+        grid-area: 6 / 2 / 7 / 3;
+    }
+
+    #card15 {
+        grid-area: 7 / 2 / 8 / 3;
+    }
+
+    #card16 {
+        grid-area: 8 / 2 / 9 / 3;
+    }
+
+    #card17 {
+        grid-area: 1 / 3 / 2 / 4;
+    }
+
+    #card18 {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+
+    #card19 {
+        grid-area: 3 / 3 / 4 / 4;
+    }
+
+    #card20 {
+        grid-area: 4 / 3 / 5 / 4;
+    }
+
+    #card21 {
+        grid-area: 5 / 3 / 6 / 4;
+    }
+
+    #card22 {
+        grid-area: 6 / 3 / 7 / 4;
+    }
+
+    #card23 {
+        grid-area: 7 / 3 / 8 / 4;
+    }
+
+    #card24 {
+        grid-area: 8 / 3 / 9 / 4;
+    }
+
+    #card25 {
+        grid-area: 1 / 4 / 2 / 5;
+    }
+
+    #card26 {
+        grid-area: 2 / 4 / 3 / 5;
+    }
+
+    #card27 {
+        grid-area: 3 / 4 / 4 / 5;
+    }
+
+    #card28 {
+        grid-area: 4 / 4 / 5 / 5;
+    }
+
+    #card29 {
+        grid-area: 5 / 4 / 6 / 5;
+    }
+
+    #card30 {
+        grid-area: 6 / 4 / 7 / 5;
+    }
+
+    #card31 {
+        grid-area: 7 / 4 / 8 / 5;
+    }
+
+    #card32 {
+        grid-area: 8 / 4 / 9 / 5;
+    }
+
+}
+
+@media(max-width:500px) {
+    .grid {
+        width: 90vw;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(11, 1fr);
+    }
+
+    /* Small screen: 3 columns × 11 rows */
+
+    #card1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    #card2 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    #card3 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    #card4 {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    #card5 {
+        grid-area: 5 / 1 / 6 / 2;
+    }
+
+    #card6 {
+        grid-area: 6 / 1 / 7 / 2;
+    }
+
+    #card7 {
+        grid-area: 7 / 1 / 8 / 2;
+    }
+
+    #card8 {
+        grid-area: 8 / 1 / 9 / 2;
+    }
+
+    #card9 {
+        grid-area: 9 / 1 / 10 / 2;
+    }
+
+    #card10 {
+        grid-area: 10 / 1 / 11 / 2;
+    }
+
+    #card11 {
+        grid-area: 11 / 1 / 12 / 2;
+    }
+
+    #card12 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    #card13 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    #card14 {
+        grid-area: 3 / 2 / 4 / 3;
+    }
+
+    #card15 {
+        grid-area: 4 / 2 / 5 / 3;
+    }
+
+    #card16 {
+        grid-area: 5 / 2 / 6 / 3;
+    }
+
+    #card17 {
+        grid-area: 6 / 2 / 7 / 3;
+    }
+
+    #card18 {
+        grid-area: 7 / 2 / 8 / 3;
+    }
+
+    #card19 {
+        grid-area: 8 / 2 / 9 / 3;
+    }
+
+    #card20 {
+        grid-area: 9 / 2 / 10 / 3;
+    }
+
+    #card21 {
+        grid-area: 10 / 2 / 11 / 3;
+    }
+
+    #card22 {
+        grid-area: 11 / 2 / 12 / 3;
+    }
+
+    #card23 {
+        grid-area: 1 / 3 / 2 / 4;
+    }
+
+    #card24 {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+
+    #card25 {
+        grid-area: 3 / 3 / 4 / 4;
+    }
+
+    #card26 {
+        grid-area: 4 / 3 / 5 / 4;
+    }
+
+    #card27 {
+        grid-area: 5 / 3 / 6 / 4;
+    }
+
+    #card28 {
+        grid-area: 6 / 3 / 7 / 4;
+    }
+
+    #card29 {
+        grid-area: 7 / 3 / 8 / 4;
+    }
+
+    #card30 {
+        grid-area: 8 / 3 / 9 / 4;
+    }
+
+    #card31 {
+        grid-area: 9 / 3 / 10 / 4;
+    }
+
+    #card32 {
+        grid-area: 10 / 3 / 11 / 4;
+    }
+
+}
+
+.gitHub {
+    background-image: url("images/githubLogo.png");
+}
+
+.js {
+    background-image: url("images/jsLogo.png");
+}
+
+.css {
+    background-image: url("images/cssLogo.png");
+}
+
+.java {
+    background-image: url("images/javaLogo.png");
+}
+
+.python {
+    background-image: url("images/pythonLogo.png");
+}
+
+.nodejs {
+    background-image: url("images/nodejsLogo.jpeg");
+}
+
+.cpp {
+    background-image: url("images/cppLogo.png");
+}
+
+.mongo {
+    background-image: url("images/mongodbLogo.png");
+}
+
+.react {
+    background-image: url("images/reactLogo.png");
+}
+
+.sql {
+    background-image: url("images/mySqlLogo.png");
+}
+
+.vue {
+    background-image: url("images/vuejsLogo.png");
+}
+
+.spring {
+    background-image: url("images/springBootLogo.png");
+}
+
+.django {
+    background-image: url("images/djangoLogo.png");
+}
+
+.bootstrap {
+    background-image: url("images/bootstrapLogo.jpeg");
+}
+
+.tailwind {
+    background-image: url("images/tailwindLogo.png");
+}
+
+.kotlin {
+    background-image: url("images/kotlinLogo.jpeg");
+}
+
+.card:hover {
+    box-shadow: 0px 0px 4px 4px rgb(212, 209, 209);
+}
+
+table,
+th,
+td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.scoreCard {
+    width: 50vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+td {
+    text-align: center;
+}
+
+td,
+th {
+    width: 100px;
+}
